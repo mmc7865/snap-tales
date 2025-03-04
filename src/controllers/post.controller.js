@@ -22,5 +22,5 @@ module.exports.postCreateController = async (req, res)=>{
             posts: post._id
         }
     })
-    res.send('post Created')
+    res.redirect("/users/profile")
 }
