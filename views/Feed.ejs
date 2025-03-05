@@ -20,67 +20,66 @@
         width: 100%;
         height: 100%;
       }
-      #main{
+      #main {
         padding-bottom: 20px;
       }
       .container {
-      width: 80%;
-      padding-bottom: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .container .user{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .container .buttons{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-    }
-    .container a{
-      padding: 10px 20px;
-      background-color: #ecf0f3;
-      font-size: 18px;
-      font-weight: 500;
-      border: none;
-      border-radius: 10px;
-      color: red;
-      text-decoration: none;
-      box-shadow: -3px -3px 7px #fff, 3px 3px 5px #ceced1;
-      cursor: pointer;
-    }
-    .container a:active{
-      box-shadow: inset 3px 3px 5px #ceced1, 3px 3px 7px #fff;
-
-    }
-    .container .explore{
-      color: #04a304;
-      padding: 10px 36px;
-    }
-    .container .userImage {
-      width: 100px;
-      height: 100px;
-      box-shadow: -3px -3px 7px #fff, 3px 3px 5px #ceced1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 15px;
-    }
-    .container img {
-      width: 90%;
-      height: 90%;
-      border-radius: 10px;
-      object-fit: cover;
-      object-position: center;
-    }
-    .userDetails h3 {
-      color: #00000090;
-    }
+        width: 80%;
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .container .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .container .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .container a {
+        padding: 10px 20px;
+        background-color: #ecf0f3;
+        font-size: 18px;
+        font-weight: 500;
+        border: none;
+        border-radius: 10px;
+        color: red;
+        text-decoration: none;
+        box-shadow: -3px -3px 7px #fff, 3px 3px 5px #ceced1;
+        cursor: pointer;
+      }
+      .container a:active {
+        box-shadow: inset 3px 3px 5px #ceced1, 3px 3px 7px #fff;
+      }
+      .container .explore {
+        color: #04a304;
+        padding: 10px 36px;
+      }
+      .container .userImage {
+        width: 100px;
+        height: 100px;
+        box-shadow: -3px -3px 7px #fff, 3px 3px 5px #ceced1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+      }
+      .container img {
+        width: 90%;
+        height: 90%;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .userDetails h3 {
+        color: #00000090;
+      }
       .cards {
         width: 80%;
         display: flex;
@@ -160,53 +159,61 @@
       .caption {
         padding-left: 10px;
       }
-      @media  (max-width: 660px){ 
-      #main{
-        padding: 0px;
-        padding-top: 20px;
+      @media (max-width: 660px) {
+        #main {
+          padding: 0px;
+          padding-top: 20px;
+        }
+        .container {
+          align-items: flex-start;
+        }
+        .container .user {
+          flex-direction: column;
+          align-items: start;
+        }
+        .container a {
+          padding: 10px 24px;
+        }
+        .container .explore {
+          padding: 10px 40px;
+        }
+        .userDetails h2 {
+          box-shadow: inset 3px 3px 5px #ceced1, 3px 3px 7px #fff;
+          border-radius: 5px;
+          padding: 5px 15px;
+        }
+        .userDetails h3 {
+          display: none;
+        }
+        .upload,
+        .card {
+          width: 290px;
+        }
+        #main .cards {
+          padding-bottom: 20px;
+        }
       }
-      .container{
-        align-items: flex-start;
-      }
-      .container .user{
-        flex-direction: column;
-        align-items: start;
-      }
-      .container a{
-        padding: 10px 24px;
-      }
-      .container .explore{
-        padding: 10px 40px;
-      }
-      .userDetails h3{
-        display: none;
-      }
-      .upload , .card{
-        width: 290px;
-      }
-      #main .cards{
-        padding-bottom: 20px;
-      }
-    }
     </style>
   </head>
   <body>
     <div id="main">
-        <div class="container">
-            <div class="user">
-             <div class="userImage">
-               <img src="<%= user.imageURL%>" alt="" />
-             </div>
-             <div class="userDetails">
-               <h2><%= user.username%></h2>
-               <h3><%= user.email%></h3>
-             </div>
-            </div>
-             <div class="buttons">
-               <a href="/users/logOut">Log Out <i class="ri-logout-box-r-line"></i></a>
-               <a class="explore" href="/users/profile">Profile</a>
-             </div>
-           </div>
+      <div class="container">
+        <div class="user">
+          <div class="userImage">
+            <img src="<%= user.imageURL%>" alt="" />
+          </div>
+          <div class="userDetails">
+            <h2><%= user.username%></h2>
+            <h3><%= user.email%></h3>
+          </div>
+        </div>
+        <div class="buttons">
+          <a href="/users/logOut"
+            >Log Out <i class="ri-logout-box-r-line"></i
+          ></a>
+          <a class="explore" href="/users/profile">Profile</a>
+        </div>
+      </div>
       <h1>Explore Feed</h1>
 
       <div class="cards">

@@ -38,19 +38,19 @@
       justify-content: space-between;
       align-items: center;
     }
-    .container .user{
+    .container .user {
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .container .buttons{
+    .container .buttons {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 10px;
     }
-    .container a{
+    .container a {
       padding: 10px 30px;
       background-color: #ecf0f3;
       font-size: 18px;
@@ -61,11 +61,10 @@
       box-shadow: -3px -3px 7px #fff, 3px 3px 5px #ceced1;
       cursor: pointer;
     }
-    .container a:active{
+    .container a:active {
       box-shadow: inset 3px 3px 5px #ceced1, 3px 3px 7px #fff;
-
     }
-    .container .explore{
+    .container .explore {
       color: #04a304;
       padding: 10px 22px;
     }
@@ -78,6 +77,7 @@
       align-items: center;
       border-radius: 15px;
     }
+
     .userDetails h3 {
       color: #00000090;
     }
@@ -107,9 +107,8 @@
       border-radius: 20px;
       box-shadow: -3px -3px 7px #fff, 3px 3px 5px #ceced1;
     }
-    .cards .upload{
+    .cards .upload {
       box-shadow: inset 3px 3px 5px #ceced1, 3px 3px 7px #fff;
-
     }
     .card .profile {
       display: flex;
@@ -175,47 +174,54 @@
       text-decoration: none;
       color: #00000090;
     }
-    @media  (max-width: 660px){ 
-      #main{
+    @media (max-width: 660px) {
+      #main {
         padding: 0px;
         padding-top: 20px;
       }
-      .container{
+      .container {
         align-items: flex-start;
       }
-      .container .user{
+      .container .user {
         flex-direction: column;
         align-items: start;
       }
-      .container a{
+      .container a {
         padding: 10px 24px;
       }
-      .container .explore{
+      .container .explore {
         padding: 10px 15px;
       }
-      .userDetails h3{
+      .userDetails h2 {
+        box-shadow: inset 3px 3px 5px #ceced1, 3px 3px 7px #fff;
+        border-radius: 5px;
+        padding: 5px 15px;
+      }
+      .userDetails h3 {
         display: none;
       }
-      .upload , .card{
+      .upload,
+      .card {
         width: 290px;
       }
-      
     }
   </style>
   <body>
     <div id="main">
       <div class="container">
-       <div class="user">
-        <div class="userImage">
-          <img src="<%= user.imageURL%>" alt="" />
+        <div class="user">
+          <div class="userImage">
+            <img src="<%= user.imageURL%>" alt="" />
+          </div>
+          <div class="userDetails">
+            <h2><%= user.username%></h2>
+            <h3><%= user.email%></h3>
+          </div>
         </div>
-        <div class="userDetails">
-          <h2><%= user.username%></h2>
-          <h3><%= user.email%></h3>
-        </div>
-       </div>
         <div class="buttons">
-          <a href="/users/logOut">Log Out <i class="ri-logout-box-r-line"></i></a>
+          <a href="/users/logOut"
+            >Log Out <i class="ri-logout-box-r-line"></i
+          ></a>
           <a class="explore" href="/users/exploreFeed">Explore Feed </a>
         </div>
       </div>
